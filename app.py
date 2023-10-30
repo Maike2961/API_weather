@@ -4,7 +4,6 @@ import os
 load_dotenv(override=True)
 
 API_KEY = os.environ['API_KEY']
-city_name = "recife"
 inicio = True
 
 cities = ["rio de janeiro", "são paulo", "minas gerais", "recife", "amazonas", "curitiba", "rio grande do norte", "ceara"]
