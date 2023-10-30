@@ -6,11 +6,12 @@ load_dotenv(override=True)
 API_KEY = os.environ['API_KEY']
 inicio = True
 
-cities = ["rio de janeiro", "são paulo", "minas gerais", "recife", "amazonas", "curitiba", "rio grande do norte", "ceara"]
+cities = ["rio de janeiro", "são paulo", "minas gerais", "recife", "amazonas", "curitiba", "rio grande do norte", 
+          "ceara", "tocantins", "roraima", "rio grande do sul", "maranhão", "alagoas", "acre", "pernambuco", "bahia"]
 
 def celsius(temp):
     ts = temp - 273
-    return f" A temperatura em Celsisus é {ts} °C"
+    return f"A temperatura em Celsisus é {ts} °C"
 
 while True:
     if inicio == False:
