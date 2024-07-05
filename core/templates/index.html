@@ -1,0 +1,36 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Whether</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{%static 'assets/icons8-clima-de-maçã.svg'%}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="boss">
+        <div class="weather-content">
+            <form class="input-content" method="POST">
+                {% csrf_token %} 
+                <input class="input-text" type="text" name="cities" placeholder="Digite a cidade que deseja...">
+                <button class="search-button">
+                    <img class="img-busca" src="{% static 'assets/search-svgrepo-com.svg' %}" alt="Busca">
+                </button>
+            </form>
+            <h2>Tempo em {{nome}}</h2>
+            <p>{{calor}}</p>
+            <img class="icon-temp" src="https://openweathermap.org/img/wn/{{icon}}.png" width="45px" alt="icon">
+            <p>{{descricao}}</p>
+            <p>Umidade {{umidade}}%</p>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -15,10 +15,11 @@
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("./assets/pexels-pixabay-459451.jpg");
+    background-image: url("assets/pexels-pixabay-459451.jpg");
 }
 
 .weather-content{
+    text-align: center;
     background-color: $black-normal;
     opacity: 0.9;
     padding: 1rem;
@@ -78,6 +79,11 @@
     background-color: $black-dark;
     border-radius: 2rem;
 }
+
+.icon-temp{
+    background-color: $black-dark;
+}
+
 
 .img-busca{
     width: 0.90rem;
