@@ -5,6 +5,12 @@ import os
 api_key = os.getenv("API_KEY")
 
 def index(request):
+    content={
+            "descricao": "Sem Descricao",
+            "nome": " ",
+            "calor": "0",
+            "umidade": "0"      
+            }
     if(request.POST):
         cities = request.POST.dict()
         data = cities.get('cities')
@@ -32,18 +38,12 @@ def index(request):
                     "calor": calor,
                     "umidade": umidade
                 }
-            except:
-                print("Erro")
+                print(content)
+            except KeyError as e:
+                print(f"Erro ao obter dados do clima: {e}")
         else:
-            content={
-                    "descricao": "Sem Descricao",
-                    "icon": " ",
-                    "nome": " ",
-                    "calor": "0",
-                    "umidade": "0"      
-                }
-            return render(request, "index.html",content)
-    return render(request, "index.html", content)
+            print("Dados de cidade não foram fornecidos.")
+    return render(request, "index.html",content)
 
 def celsius(temperatura):
     ts = temperatura - 273

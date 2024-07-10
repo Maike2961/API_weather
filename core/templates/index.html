@@ -18,7 +18,7 @@
     <section class="boss">
         <div class="weather-content">
             <form class="input-content" method="POST">
-                {% csrf_token %} 
+                {% csrf_token %}
                 <input class="input-text" type="text" name="cities" placeholder="Digite a cidade que deseja...">
                 <button class="search-button">
                     <img class="img-busca" src="{% static 'assets/search-svgrepo-com.svg' %}" alt="Busca">
@@ -26,7 +26,11 @@
             </form>
             <h2>Tempo em {{nome}}</h2>
             <p>{{calor}}</p>
+            {%if icon%}
             <img class="icon-temp" src="https://openweathermap.org/img/wn/{{icon}}.png" width="45px" alt="icon">
+            {%else%}
+            <img class="icon-temp" src="{% static 'assets/icons8-clima-de-maçã.svg'%}" width="45px" alt="icon">
+            {%endif%}
             <p>{{descricao}}</p>
             <p>Umidade {{umidade}}%</p>
         </div>
