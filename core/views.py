@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from dotenv import load_dotenv
 import requests
 import os
+
+load_dotenv(override=True)
 
 api_key = os.getenv("API_KEY")
 
